@@ -8,7 +8,7 @@
 - It is a denoised version of AMEX dataset (https://www.kaggle.com/competitions/amex-default-prediction/data)
 - Available at https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format
 
-#### Description
+#### Methodology
 - Numerical columns were scaled using StandardScaler
 - Find the correlation between the feature column and dropped the columns using different threashold values, i.e, 0.5, 0.4, 03
 - Also, having an optional parameter to keep all the columns except S_2.
