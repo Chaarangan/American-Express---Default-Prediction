@@ -9,9 +9,11 @@
 - Available at https://www.kaggle.com/datasets/raddar/amex-data-integer-dtypes-parquet-format
 
 #### Methodology
-- Numerical columns were scaled using StandardScaler
-- Find the correlation between the feature column and dropped the columns using different threashold values, i.e, 0.5, 0.4, 03
+- The imputation method is used to fill in the missing or NaN values in the dataset
+- Numerical columns were scaled using StandardScaler and RobustSclaer for handling outliers
+- Find the correlation between the feature column and dropped the columns using different threshold values, i.e, 0.5, 0.4, 03
 - Also, having an optional parameter to keep all the columns except S_2.
-- To flag problems like overfitting or selection bias, K-fold cross-validation was applied.
-- Three models were trained: Light GBM and CatBoost, and their ensemble during the experiment (hyperparameters are in the notebook)
-- Averaged both models' outputs gave the highest score.
+- To flag problems like imbalanced, overfitting, or selection bias, Stratified K-fold cross-validation was applied.
+- Five models were trained: SVM, KNN, Light GBM, and CatBoost, and an ensemble of LGBM & CatBoost during the experiment (hyperparameters are in the notebook)
+- Total 10 experiments: without K-fold for 5 models, and with K-fold for 5 models
+- In addition, logged the average of the CatBoost & LGBM models' outputs for final submission. This gave the highest score with K-Fold cross-validation.
